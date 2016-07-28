@@ -72,8 +72,8 @@
 43|MPI_FILE_WRITE_ALL_END_ID|int MPI_File_write_all_end(MPI_File fh, const void *buf, MPI_Status *status)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
 44|MPI_FILE_READ_ORDERED_BEGIN_ID|int MPI_File_read_ordered_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)||CS_REMOTE,BYTES_COUNT_DATATYPE,RANK_NONE,DATA_NONE,COMM_NONE
 45|MPI_FILE_READ_ORDERED_END_ID|int MPI_File_read_ordered_end(MPI_File fh, void *buf, MPI_Status *status)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
-46|MPI_FILE_WRITE_ORDERED_BEGIN_ID|int MPI_File_write_ordered_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)||CS_REMOTE,BYTES_COUNT_DATATYPE,RANK_NONE,DATA_NONE,COMM_NONE
-47|MPI_FILE_WRITE_ORDERED_END_ID|int MPI_File_write_ordered_end(MPI_File fh, void *buf, MPI_Status *status)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
+46|MPI_FILE_WRITE_ORDERED_BEGIN_ID|int MPI_File_write_ordered_begin(MPI_File fh, const void *buf, int count, MPI_Datatype datatype)||CS_REMOTE,BYTES_COUNT_DATATYPE,RANK_NONE,DATA_NONE,COMM_NONE
+47|MPI_FILE_WRITE_ORDERED_END_ID|int MPI_File_write_ordered_end(MPI_File fh, const void *buf, MPI_Status *status)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
 48|MPI_FILE_SET_ATOMICITY_ID|int MPI_File_set_atomicity(MPI_File fh, int flag)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
 49|MPI_FILE_GET_ATOMICITY_ID|int MPI_File_get_atomicity(MPI_File fh, int *flag)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
 50|MPI_FILE_SYNC_ID|int MPI_File_sync(MPI_File fh)||CS_REMOTE,BYTES_NONE,RANK_NONE,DATA_NONE,COMM_NONE
