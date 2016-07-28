@@ -12,6 +12,8 @@
 #include "GEN.calltable_mpi.h"
 #include "GEN.calltable_mpiio.h"
 
+#include "regstack.h"
+
 #ifdef HAVE_CALLPATH
 #include "mod_callpath.h"
 #endif
@@ -20,8 +22,14 @@
 #include "mod_keyhist.h"
 #endif
 
+#ifndef MPI3CONST
+#if MPI_VERSION >= 3
+#define MPI3CONST const
+#else
+#define MPI3CONST
+#endif
+#endif
 
-#include "regstack.h"
 
 /** HEADER_END **/
 
