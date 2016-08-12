@@ -9,6 +9,8 @@ int mod_mpi_init(ipm_mod_t* mod, int flags);
 int mod_mpi_output(ipm_mod_t* mod, int flags);
 int mod_mpi_finalize(ipm_mod_t* mod, int flags);
 
+extern unsigned long long * ipm_comm_heatmap;
+
 /* enables collection of datatype and operations for collectives */
 //#define IPM_COLLECTIVE_DETAILS 1
 

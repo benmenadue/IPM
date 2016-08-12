@@ -8,6 +8,8 @@
 #include "ipm_modules.h"
 #include "GEN.calltable_mpi.h"
 
+unsigned long long * ipm_comm_heatmap = NULL;
+
 char* ipm_mpi_op[MAXNUM_MPI_OPS];
 char* ipm_mpi_type[MAXNUM_MPI_TYPES];
 

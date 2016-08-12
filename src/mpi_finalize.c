@@ -8,6 +8,8 @@
 #include "GEN.calltable_mpi.h"
 #include "GEN.fproto.mpi.h"
 
+#include "mod_mpi.h"
+
 #ifdef HAVE_KEYHIST
 #include "mod_keyhist.h"
 #endif
@@ -68,6 +70,8 @@ int MPI_Finalize()
   rv = PMPI_Finalize();
   return rv;
 #endif /* DELAYED_MPI_FINALIZE */
+
+  if (ipm_comm_heatmap != NULL) free(ipm_comm_heatmap);
   
   return MPI_SUCCESS;
 }

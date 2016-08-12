@@ -37,16 +37,23 @@
  * strings in the form __IDENTIFIER__ are replaced 
  * by the wrapper script
  *
- * CRET       __CRET__
- * CFNAME     __CFNAME__ 
- * CPARAMS    __CPARAMS__
- * CARGS      __CARGS__
- * CFMT       __CFMT__
- * GET_BYTES  __GET_BYTES__
- * GET_RANK   __GET_RANK__
+ * CFNAME __CFNAME__
+ * PCFNAME __PCFNAME__
+ * CRET __CRET__
+ * CPARAMS __CPARAMS__
+ * CARGS __CARGS__
+ * CARGFMT __CARGFMT__
+ * CRETFMT __CRETFMT__
+ * CFID __CFID__
+ * GET_BYTES __GET_BYTES__
+ * GET_SSIZE __GET_SSIZE__
+ * GET_RSIZE __GET_RSIZE__
+ * GET_RANK __GET_RANK__
+ * RETURN_VALUE __RETURN_VALUE__
+
  */
 
-void IPM___CFNAME__(__CPARAMS__, double tstart, double tstop)
+static void IPM___CFNAME__(__CPARAMS__, double tstart, double tstop)
 {
   int bytes, irank;
   double t;
@@ -144,6 +151,10 @@ void IPM___CFNAME__(__CPARAMS__, double tstart, double tstop)
 #endif
 
   IPM_HASHTABLE_ADD(idx,t);
+
+  if ((ipm_calltable[__CFID__].attr & DATA_TX) != 0 ||
+      (ipm_calltable[__CFID__].attr & DATA_TXRX) != 0)
+    ipm_comm_heatmap[irank] += bytes;
  
 #ifdef HAVE_SNAP
  IPM_SNAP;

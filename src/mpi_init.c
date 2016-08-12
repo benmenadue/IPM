@@ -33,6 +33,8 @@ void ipm_mpi_init() {
   PMPI_Comm_size( MPI_COMM_WORLD, &(task.ntasks) );
   PMPI_Comm_group( MPI_COMM_WORLD, &ipm_world_group );
 
+  ipm_comm_heatmap = (unsigned long long *)malloc(task.ntasks * sizeof(unsigned long long));
+
   ipm_get_machtopo();
 
   IPMDBG("ipm_mpi_init rank=%d size=%d\n", 
